@@ -1,14 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
 
-*{
-  font-family: 'Poppins', sans-serif;
-  scroll-behavior: smooth;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
+
+/* Todo Card Start */
+.card-head {
+  background: url("../assets/Header-Card.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* Todo Card end */
+
 /* Footer Start */
 .share_section .logo {
-  border-radius: 100%;
   width: 40px;
   height: 40px;
 }
 /* Footer End */
-
