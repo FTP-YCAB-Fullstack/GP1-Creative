@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+*{
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
 /* Footer Start */
 .share_section .logo {
   border-radius: 100%;
@@ -5,3 +11,4 @@
   height: 40px;
 }
 /* Footer End */
+
