@@ -32,7 +32,7 @@
     <div>
       <h1 class="text-6xl flex justify-center mt-24">Cuaca Yang Akan Datang</h1>
     </div>
-    <div class="flex justify-center mt-16">
+    <div id="weather-cards" class="flex justify-center mt-16">
       <div
         class="
           inline-block
@@ -46,9 +46,13 @@
         "
       >
         <div class="px-6 py-8 bg-blue-400 rounded-full">
-          <i class="fas fa-cloud-sun fa-4x icon" style="color: white"></i>
+          <i
+            id="weather"
+            class="fas fa-cloud-sun fa-4x icon"
+            style="color: white"
+          ></i>
         </div>
-        <p class="mt-12 text-blue-400 text-xl">Cuaca Hari Ini</p>
+        <p id="summary" class="mt-12 text-blue-400 text-xl">Cuaca Hari Ini</p>
         <div class="flex justify-center">
           <img
             src="./assets/clock.svg"
@@ -56,7 +60,9 @@
             style="max-width: 20px; margin-right: 10px"
             alt=""
           />
-          <p class="mt-4 text-blue-400" style="margin-right: 5px">10:01 PM</p>
+          <p id="time" class="mt-4 text-blue-400" style="margin-right: 5px">
+            10:01 PM
+          </p>
         </div>
       </div>
       <div
@@ -72,9 +78,13 @@
         "
       >
         <div class="px-6 py-8 bg-blue-400 rounded-full">
-          <i class="fas fa-cloud-sun fa-4x icon" style="color: white"></i>
+          <i
+            id="weather"
+            class="fas fa-cloud-sun fa-4x icon"
+            style="color: white"
+          ></i>
         </div>
-        <p class="mt-12 text-blue-400 text-xl">Cuaca Hari Ini</p>
+        <p id="summary" class="mt-12 text-blue-400 text-xl">Cuaca Hari Ini</p>
         <div class="flex justify-center">
           <img
             src="./assets/clock.svg"
@@ -82,7 +92,9 @@
             style="max-width: 20px; margin-right: 10px"
             alt=""
           />
-          <p class="mt-4 text-blue-400" style="margin-right: 5px">10:01 PM</p>
+          <p id="time" class="mt-4 text-blue-400" style="margin-right: 5px">
+            10:01 PM
+          </p>
         </div>
       </div>
       <div
@@ -98,9 +110,13 @@
         "
       >
         <div class="px-6 py-8 bg-blue-400 rounded-full">
-          <i class="fas fa-cloud-sun fa-4x icon" style="color: white"></i>
+          <i
+            id="weather"
+            class="fas fa-cloud-sun fa-4x icon"
+            style="color: white"
+          ></i>
         </div>
-        <p class="mt-12 text-blue-400 text-xl">Cuaca Hari Ini</p>
+        <p id="summary" class="mt-12 text-blue-400 text-xl">Cuaca Hari Ini</p>
         <div class="flex justify-center">
           <img
             src="./assets/clock.svg"
@@ -108,7 +124,9 @@
             style="max-width: 20px; margin-right: 10px"
             alt=""
           />
-          <p class="mt-4 text-blue-400" style="margin-right: 5px">10:01 PM</p>
+          <p id="time" class="mt-4 text-blue-400" style="margin-right: 5px">
+            10:01 PM
+          </p>
         </div>
       </div>
       <div
@@ -124,9 +142,13 @@
         "
       >
         <div class="px-6 py-8 bg-blue-400 rounded-full">
-          <i class="fas fa-cloud-sun fa-4x icon" style="color: white"></i>
+          <i
+            id="weather"
+            class="fas fa-cloud-sun fa-4x icon"
+            style="color: white"
+          ></i>
         </div>
-        <p class="mt-12 text-blue-400 text-xl">Cuaca Hari Ini</p>
+        <p id="summary" class="mt-12 text-blue-400 text-xl">Cuaca Hari Ini</p>
         <div class="flex justify-center">
           <img
             src="./assets/clock.svg"
@@ -134,7 +156,9 @@
             style="max-width: 20px; margin-right: 10px"
             alt=""
           />
-          <p class="mt-4 text-blue-400" style="margin-right: 5px">10:01 PM</p>
+          <p id="time" class="mt-4 text-blue-400" style="margin-right: 5px">
+            10:01 PM
+          </p>
         </div>
       </div>
     </div>
@@ -147,34 +171,21 @@
     <div class="card mx-auto bg-white text-black w-3/5 rounded-lg">
       <div class="card-head h-64 mb-3 rounded-t-lg w-full">
         <div class="clear flex justify-end p-3 text-2xl">
-          <i id="reset-todo" class="fas fa-sync-alt"></i>
+          <i id="reset-todo" class="fas fa-sync-alt cursor-pointer"></i>
         </div>
       </div>
       <div class="card-output h-96 text-black mx-2 p-3">
-        <div
-          class="
-            item-output
-            items-center
-            flex flex-row
-            justify-between
-            w-full
-            px-3
-            my-2
-            text-xl
-          "
-        >
-          <div class="output-left flex items-center">
-            <input class="rounded-full mr-4 text-3xl" type="checkbox" />
-            <p id="user-output">Main game sape pagi</p>
-          </div>
-          <div class="output-right">
-            <i class="fas fa-trash-alt"></i>
-          </div>
+        <div id="list" class="flex flex-col px-3 my-2 text-xl">
+          <!-- Nanti To-Do-List akan berada di sini -->
         </div>
       </div>
       <div class="card-input flex items-center p-2">
-        <i id="add-todo" class="fas fa-plus-circle text-3xl mx-3"></i>
+        <i
+          id="add-todo"
+          class="fas fa-plus-circle text-3xl mx-3 cursor-pointer"
+        ></i>
         <input
+          id="text-todo"
           class="
             input
             py-2
@@ -213,5 +224,6 @@
         </div>
       </div>
     </footer>
+    <script src="js/main.js"></script>
   </body>
 </html>
