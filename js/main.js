@@ -78,6 +78,7 @@ let createToDo = (name, isCheck = false) => {
   const li = document.createElement("li");
   li.style.display = "flex";
   li.style.alignItems = "center";
+  li.style.margin = "10px 0";
   li.counter = counter;
 
   const label = document.createElement("label");
@@ -162,5 +163,4 @@ document.getElementById("reset-todo").onclick = () => {
   dataTodo = [];
   localStorage.clear();
 };
-
 // Kartu To-Do-List End
