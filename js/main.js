@@ -53,23 +53,27 @@ let fail = error => {
   console.log(error);
 };
 
-// if (navigator.geolocation) {
-//   navigator.geolocation.getCurrentPosition(success, fail);
-// } else {
-//   console.log("Geolocation is not supported by this browser.");
-// }
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(success, fail);
+} else {
+  console.log("Geolocation is not supported by this browser.");
+}
 // Kartu Cuaca End
 
 // Kartu To-Do-List Start
 const list = document.getElementById("list");
 let counter = 0;
-let dataTodo = [];
+let dataTodo = [
+  {
+    data: {}
+  }
+];
 
 let refreshDataLocal = () => {
   localStorage.setItem("dataToDo", JSON.stringify(dataTodo));
 };
 
-let createToDo = (name, isCheck = false) => {
+let createToDo = (name, position, isCheck = false) => {
   let objToDo = {
     name,
     isCheck
@@ -79,7 +83,7 @@ let createToDo = (name, isCheck = false) => {
   li.style.display = "flex";
   li.style.alignItems = "center";
   li.style.margin = "10px 0";
-  li.counter = counter;
+  li.counter = position;
 
   const label = document.createElement("label");
   label.innerHTML = name;
@@ -105,7 +109,8 @@ let createToDo = (name, isCheck = false) => {
   imgCircle.style.cursor = "pointer";
   imgCircle.onclick = () => {
     imgCircleCheck();
-    dataTodo[li.counter - 1]["isCheck"] = objToDo["isCheck"];
+    console.log(li.counter);
+    dataTodo[0]["data"][li.counter]["isCheck"] = objToDo["isCheck"];
     refreshDataLocal();
   };
 
@@ -119,10 +124,9 @@ let createToDo = (name, isCheck = false) => {
     imgTrash.style.color = "black";
   };
   imgTrash.onclick = () => {
+    console.log(li.counter);
+    delete dataTodo[0]["data"][li.counter];
     li.remove();
-    dataTodo = dataTodo.filter((value, index, arr) => {
-      return index != li.counter;
-    });
     refreshDataLocal();
   };
 
@@ -131,14 +135,18 @@ let createToDo = (name, isCheck = false) => {
   li.appendChild(imgTrash);
 
   list.appendChild(li);
-  counter++;
   return objToDo;
 };
 
 if (localStorage.getItem("dataToDo") != null) {
-  dataTodo = JSON.parse(localStorage.getItem("dataToDo"));
-  for (let item of dataTodo) {
-    createToDo(item["name"], !item["isCheck"]);
+  dataTemp = JSON.parse(localStorage.getItem("dataToDo"));
+  for (let item in dataTemp[0]["data"]) {
+    dataTodo[0]["data"][counter] = createToDo(
+      dataTemp[0]["data"][item]["name"],
+      counter,
+      !dataTemp[0]["data"][item]["isCheck"]
+    );
+    counter++;
   }
 }
 
@@ -151,8 +159,10 @@ document.getElementById("text-todo").onkeyup = event => {
 
 document.getElementById("add-todo").onclick = () => {
   let textToDo = document.getElementById("text-todo").value;
-  let toDo = createToDo(textToDo);
-  dataTodo.push(toDo);
+  let toDo = createToDo(textToDo, counter);
+  console.log(counter);
+  dataTodo[0]["data"][counter] = toDo;
+  counter++;
   refreshDataLocal();
 };
 
@@ -160,7 +170,13 @@ document.getElementById("reset-todo").onclick = () => {
   while (list.firstChild) {
     list.firstChild.remove();
   }
-  dataTodo = [];
+  dataTodo = [
+    {
+      data: {}
+    }
+  ];
   localStorage.clear();
+  counter = 0;
+  console.log("Reset Success");
 };
 // Kartu To-Do-List End
