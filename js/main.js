@@ -29,7 +29,7 @@ let success = async position => {
     } else if (/rain/.test(statusWeather) && /day/.test(statusWeather)) {
       weather.setAttribute("class", "fas fa-cloud-sun-rain fa-4x icon");
     } else if (/rain/.test(statusWeather) && /night/.test(statusWeather)) {
-      weather.setAttribute("class", "fas fa-cloud-moon-rain");
+      weather.setAttribute("class", "fas fa-cloud-moon-rain icon");
     }
 
     summary.innerHTML = dataWeather["data"]["forecast"][index]["summary"];
@@ -53,11 +53,11 @@ let fail = error => {
   console.log(error);
 };
 
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(success, fail);
-} else {
-  console.log("Geolocation is not supported by this browser.");
-}
+// if (navigator.geolocation) {
+//   navigator.geolocation.getCurrentPosition(success, fail);
+// } else {
+//   console.log("Geolocation is not supported by this browser.");
+// }
 // Kartu Cuaca End
 
 // Kartu To-Do-List Start
@@ -109,7 +109,6 @@ let createToDo = (name, position, isCheck = false) => {
   imgCircle.style.cursor = "pointer";
   imgCircle.onclick = () => {
     imgCircleCheck();
-    console.log(li.counter);
     dataTodo[0]["data"][li.counter]["isCheck"] = objToDo["isCheck"];
     refreshDataLocal();
   };
@@ -124,7 +123,6 @@ let createToDo = (name, position, isCheck = false) => {
     imgTrash.style.color = "black";
   };
   imgTrash.onclick = () => {
-    console.log(li.counter);
     delete dataTodo[0]["data"][li.counter];
     li.remove();
     refreshDataLocal();
