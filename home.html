@@ -12,16 +12,78 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/home.css" />
     <title>Home Page</title>
   </head>
-  <body>
+  <body class="my-10 mx-16 text-white h-full" style="background-color: #53a6d8">
     <!-- Navbar (Header) -->
-
+    <header class="flex">
+      <a class="flex-grow" href="#"
+        ><img
+          class="mx-8 w-auto h-10"
+          src="assets/MauNgapainLogo(edited).png"
+          alt="Logo"
+      /></a>
+      <a class="mx-10 font-bold" href="#">Contact Us</a>
+      <a class="mx-10 font-bold" href="#">Help</a>
+    </header>
     <!-- Main Content -->
-
+    <div class="container flex flex-col justify-center items-center">
+      <div
+        class="
+          text text-7xl
+          font-bold
+          mt-32
+          tracking-wide
+          max-w-3xl
+          leading-tight
+          text-center
+        "
+      >
+        <h1>Selamat Datang di Website Kami</h1>
+      </div>
+      <button
+        class="
+          bg-white
+          rounded-lg
+          px-8
+          py-3
+          mt-8
+          text-2xl
+          font-bold
+          tracking-wide
+        "
+        style="color: #53a6d8"
+      >
+        Get Started
+      </button>
+    </div>
     <!-- Footer -->
-
+    <footer>
+      <div class="flex flex-col mt-20 justify-center share_section">
+        <div class="text-white text-base flex justify-center items-center mb-8">
+          <p>- Supported By -</p>
+        </div>
+        <div class="icon flex flex-row justify-center items-center">
+          <img
+            class="logo mx-2"
+            src="./assets/GithubLogo(edited).png"
+            alt="Github"
+          />
+          <img
+            class="logo mx-2"
+            src="./assets/ImpactByteLogo(edited).png"
+            alt="Impactbyte"
+          />
+          <img
+            class="logo mx-2"
+            src="./assets/SkilvulLogo(edited).png"
+            alt="Skilvul"
+          />
+        </div>
+      </div>
+    </footer>
     <!-- <script src="./js/main.js"></script> -->
   </body>
 </html>
