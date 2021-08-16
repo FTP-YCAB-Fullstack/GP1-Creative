@@ -1,5 +1,5 @@
 // Kartu Cuaca Start
-let success = async position => {
+let success = async (position) => {
   let dataWeather = await fetch(
     `https://api.ambeedata.com/weather/forecast/by-lat-lng?lat=${position.coords.latitude}&lng=${position.coords.longitude}&filter=hourly`,
     {
@@ -7,10 +7,10 @@ let success = async position => {
       headers: {
         "Content-type": "application/json",
         "x-api-key":
-          "9dfdbe26a37470b7c04444549cc7b020b99230a85a9e3f8a9d41da6b4a82065a"
-      }
+          "9dfdbe26a37470b7c04444549cc7b020b99230a85a9e3f8a9d41da6b4a82065a",
+      },
     }
-  ).then(response => response.json());
+  ).then((response) => response.json());
 
   let setWeather = (element, index) => {
     let weather = element.querySelector("#weather");
@@ -29,7 +29,7 @@ let success = async position => {
     } else if (/rain/.test(statusWeather) && /day/.test(statusWeather)) {
       weather.setAttribute("class", "fas fa-cloud-sun-rain fa-4x icon");
     } else if (/rain/.test(statusWeather) && /night/.test(statusWeather)) {
-      weather.setAttribute("class", "fas fa-cloud-moon-rain");
+      weather.setAttribute("class", "fas fa-cloud-moon-rain icon");
     }
 
     summary.innerHTML = dataWeather["data"]["forecast"][index]["summary"];
@@ -49,7 +49,7 @@ let success = async position => {
   }
 };
 
-let fail = error => {
+let fail = (error) => {
   console.log(error);
 };
 
@@ -65,8 +65,8 @@ const list = document.getElementById("list");
 let counter = 0;
 let dataTodo = [
   {
-    data: {}
-  }
+    data: {},
+  },
 ];
 
 let refreshDataLocal = () => {
@@ -76,7 +76,7 @@ let refreshDataLocal = () => {
 let createToDo = (name, position, isCheck = false) => {
   let objToDo = {
     name,
-    isCheck
+    isCheck,
   };
 
   const li = document.createElement("li");
@@ -109,7 +109,6 @@ let createToDo = (name, position, isCheck = false) => {
   imgCircle.style.cursor = "pointer";
   imgCircle.onclick = () => {
     imgCircleCheck();
-    console.log(li.counter);
     dataTodo[0]["data"][li.counter]["isCheck"] = objToDo["isCheck"];
     refreshDataLocal();
   };
@@ -124,7 +123,6 @@ let createToDo = (name, position, isCheck = false) => {
     imgTrash.style.color = "black";
   };
   imgTrash.onclick = () => {
-    console.log(li.counter);
     delete dataTodo[0]["data"][li.counter];
     li.remove();
     refreshDataLocal();
@@ -150,7 +148,7 @@ if (localStorage.getItem("dataToDo") != null) {
   }
 }
 
-document.getElementById("text-todo").onkeyup = event => {
+document.getElementById("text-todo").onkeyup = (event) => {
   if (event.code === "Enter") {
     document.getElementById("add-todo").click();
     document.getElementById("text-todo").value = "";
@@ -172,8 +170,8 @@ document.getElementById("reset-todo").onclick = () => {
   }
   dataTodo = [
     {
-      data: {}
-    }
+      data: {},
+    },
   ];
   localStorage.clear();
   counter = 0;
