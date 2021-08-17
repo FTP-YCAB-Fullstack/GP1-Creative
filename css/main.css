@@ -28,3 +28,18 @@
   height: 40px;
 }
 /* Footer End */
+
+/* Media Query min-width 768px Start */
+@media (min-width: 768px) {
+  body {
+    margin: 2rem 2rem !important;
+  }
+  #title-card-weather,
+  #title-card-todo {
+    font-size: 6vw;
+  }
+  #card-todo {
+    width: 75%;
+  }
+}
+/* Media Query min-width 768px End */

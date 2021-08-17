@@ -53,11 +53,11 @@ let fail = (error) => {
   console.log(error);
 };
 
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(success, fail);
-} else {
-  console.log("Geolocation is not supported by this browser.");
-}
+// if (navigator.geolocation) {
+//   navigator.geolocation.getCurrentPosition(success, fail);
+// } else {
+//   console.log("Geolocation is not supported by this browser.");
+// }
 // Kartu Cuaca End
 
 // Kartu To-Do-List Start
