@@ -17,7 +17,7 @@
 }
 .card-output {
   height: 300px;
-  overflow: scroll;
+  overflow: auto;
   scroll-behavior: smooth;
 }
 /* Todo Card end */
