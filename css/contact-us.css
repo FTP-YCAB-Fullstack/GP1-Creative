@@ -5,10 +5,11 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* Media Query min-width 768px Start */
-@media (min-width: 768px) {
-  body {
-    margin: 2rem 2rem !important;
+@media (max-width: 1180px) {
+  #information-cards {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow: auto;
   }
 }
-/* Media Query min-width 768px End */

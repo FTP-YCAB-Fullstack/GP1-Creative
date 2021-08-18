@@ -16,10 +16,13 @@
     <link rel="stylesheet" href="./css/index.css" />
     <title>Home Page</title>
   </head>
-  <body class="my-10 mx-16 text-white h-full" style="background-color: #53a6d8">
+  <body
+    class="my-10 mx-16 text-white h-full md:m-8"
+    style="background-color: #53a6d8"
+  >
     <div id="container-bubble"></div>
     <!-- Navbar (Header) -->
-    <header class="flex relative sm:m-4 sm:justify-between">
+    <header class="flex flex-row relative sm:m-4 sm:justify-between">
       <input type="checkbox" id="check" />
       <label for="check" class="checkbtn sm:flex-end">
         <i class="fas fa-bars text-white"></i>
@@ -39,19 +42,20 @@
     </header>
     <!-- Main Content -->
     <div class="flex flex-col justify-center items-center">
-      <div id="container-welcome">
-        <h1
-          id="welcome"
-          class="
-            text
-            sm:text-5xl
-            font-bold
-            sm:mt-28 sm:tracking-wide sm:max-w-xl sm:leading-tight
-            text-center
-          "
-        >
-          Selamat Datang di Website Kami
-        </h1>
+      <div
+        class="
+          text text-7xl
+          font-bold
+          mt-20
+          sm:mt-28
+          md:mt-16
+          tracking-wide
+          max-w-3xl
+          leading-tight
+          text-center
+        "
+      >
+        <h1 class="md:text-6xl">Selamat Datang di Website Kami</h1>
       </div>
       <a href="main.html">
         <button

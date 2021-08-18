@@ -35,13 +35,6 @@
 
 /* Media Query min-width 600px Start */
 @media (min-width: 640px) {
-  #weather-cards {
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: nowrap;
-    overflow: auto;
-  }
-
   #check {
     display: none;
   }
@@ -85,19 +78,44 @@
     left: 0;
   }
 }
-/* Media Query min-width 600px End */
 
-/* Media Query min-width 768px Start */
-/* @media (min-width: 768px) {
-  body {
-    margin: 2rem 2rem !important;
+@media (min-width: 768px) {
+  #check {
+    display: none;
   }
-  #title-card-weather,
-  #title-card-todo {
-    font-size: 6vw;
+  .checkbtn {
+    display: none;
   }
-  #card-todo {
-    width: 75%;
+  ul {
+    position: relative;
+    width: 50%;
+    height: 0;
+    top: 0px;
+    left: 0%;
+    background: none;
+    border: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    padding: 0;
+    text-align: center;
   }
-} */
-/* Media Query min-width 768px End */
+
+  ul li {
+    display: inline;
+  }
+
+  a:hover,
+  a.active {
+    background: none;
+    color: white;
+  }
+}
+
+@media (max-width: 1180px) {
+  #weather-cards {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow: auto;
+  }
+}
