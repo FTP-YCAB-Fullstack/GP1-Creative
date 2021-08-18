@@ -29,12 +29,16 @@
 }
 /* Footer End */
 
+#check {
+  display: none;
+}
+
 .checkbtn {
   display: none;
 }
 
 /* Media Query min-width 600px Start */
-@media (min-width: 640px) {
+@media (max-width: 768px) {
   #check {
     display: none;
   }
@@ -46,28 +50,27 @@
 
   ul {
     position: fixed;
-    width: 50%;
+    width: auto;
     border-radius: 0 10px 10px 0;
-    height: 20vh;
+    height: 25vh;
     top: 90px;
     left: -100%;
-    padding: 2rem;
     text-align: center;
-    transition: all 0.5s;
+    transition: all 0.5s ease-in-out;
     /* glass */
-    background: rgba(22, 20, 20, 0.45);
+    background: #0908535e;
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     border: 1px solid rgba(255, 255, 255, 0.18);
   }
 
-  nav ul li {
-    display: block;
-    margin: auto;
-    line-height: 50px;
+  ul li {
+    line-height: 30px;
   }
-  nav ul li a {
-    font-size: 2rem;
+  ul li a {
+    display: block;
+    margin-top: 2rem;
+    font-size: 1.2rem;
   }
   a:hover,
   a.active {
@@ -77,37 +80,10 @@
   #check:checked ~ ul {
     left: 0;
   }
-}
 
-@media (min-width: 768px) {
-  #check {
-    display: none;
-  }
-  .checkbtn {
-    display: none;
-  }
-  ul {
-    position: relative;
-    width: 50%;
-    height: 0;
-    top: 0px;
-    left: 0%;
-    background: none;
-    border: none;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    padding: 0;
-    text-align: center;
-  }
-
-  ul li {
-    display: inline;
-  }
-
-  a:hover,
-  a.active {
-    background: none;
-    color: white;
+  .checkbtn:active {
+    transform: rotate(90deg);
+    color: teal;
   }
 }
 
