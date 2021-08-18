@@ -21,6 +21,7 @@
 .bubble {
   position: absolute;
   background-color: white;
+  z-index: 1;
   opacity: 0.2;
   border-radius: 50%;
   bottom: -100px;
