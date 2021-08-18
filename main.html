@@ -16,16 +16,24 @@
     <title>Main Page</title>
   </head>
   <body class="my-10 mx-16 text-white" style="background-color: #53a6d8">
-    <!-- NavBar (Header) -->
-    <header class="flex">
-      <a class="flex-grow" href="index.html"
+    <!-- Navbar (Header) -->
+    <header class="flex relative sm:m-4 sm:justify-between">
+      <input type="checkbox" id="check" />
+      <label for="check" class="checkbtn sm:flex-end">
+        <i class="fas fa-bars text-white"></i>
+      </label>
+      <a href="index.html"
         ><img
-          class="mx-8 w-auto h-10"
+          class="mx-8 w-auto h-10 sm:mx-4 sm:flex-start"
           src="assets/MauNgapainLogo(edited).png"
           alt="Logo"
       /></a>
-      <a class="mx-10 font-bold" href="contact-us.html">Contact Us</a>
-      <a class="mx-10 font-bold" href="help.html">Help</a>
+      <ul class="sm:justify-center sm:items-center">
+        <li>
+          <a class="mx-10 font-bold" href="contact-us.html">Contact Us</a>
+        </li>
+        <li><a class="mx-10 font-bold" href="help.html">Help</a></li>
+      </ul>
     </header>
     <!-- Main Content -->
     <!-- Weather Card -->
