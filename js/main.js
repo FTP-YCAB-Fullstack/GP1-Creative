@@ -139,7 +139,7 @@ let createToDo = (name, position, isCheck = false) => {
 };
 
 if (localStorage.getItem("dataToDo") != null) {
-  dataTemp = JSON.parse(localStorage.getItem("dataToDo"));
+  let dataTemp = JSON.parse(localStorage.getItem("dataToDo"));
   for (let item in dataTemp[0]["data"]) {
     dataTodo[0]["data"][counter] = createToDo(
       dataTemp[0]["data"][item]["name"],
