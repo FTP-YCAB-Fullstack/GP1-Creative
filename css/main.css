@@ -29,6 +29,56 @@
 }
 /* Footer End */
 
+.checkbtn {
+  display: none;
+}
+
+/* Media Query min-width 600px Start */
+@media (min-width: 640px) {
+  #check {
+    display: none;
+  }
+
+  .checkbtn {
+    display: block;
+    font-size: 2rem;
+  }
+
+  ul {
+    position: fixed;
+    width: 50%;
+    border-radius: 0 10px 10px 0;
+    height: 20vh;
+    top: 90px;
+    left: -100%;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.5s;
+    /* glass */
+    background: rgba(22, 20, 20, 0.45);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  nav ul li {
+    display: block;
+    margin: auto;
+    line-height: 50px;
+  }
+  nav ul li a {
+    font-size: 2rem;
+  }
+  a:hover,
+  a.active {
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ ul {
+    left: 0;
+  }
+}
+
 @media (max-width: 1180px) {
   #weather-cards {
     display: flex;
