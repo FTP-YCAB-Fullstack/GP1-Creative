@@ -110,3 +110,35 @@
     left: 0;
   }
 }
+
+@media (min-width: 768px) {
+  #check {
+    display: none;
+  }
+  .checkbtn {
+    display: none;
+  }
+  ul {
+    position: relative;
+    width: 50%;
+    height: 0;
+    top: 0px;
+    left: 0%;
+    background: none;
+    border: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    padding: 0;
+    text-align: center;
+  }
+
+  ul li {
+    display: inline;
+  }
+
+  a:hover,
+  a.active {
+    background: none;
+    color: white;
+  }
+}
