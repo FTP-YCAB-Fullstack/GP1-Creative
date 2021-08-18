@@ -29,17 +29,11 @@
 }
 /* Footer End */
 
-/* Media Query min-width 768px Start */
-@media (min-width: 768px) {
-  body {
-    margin: 2rem 2rem !important;
-  }
-  #title-card-weather,
-  #title-card-todo {
-    font-size: 6vw;
-  }
-  #card-todo {
-    width: 75%;
+@media (max-width: 1180px) {
+  #weather-cards {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow: auto;
   }
 }
-/* Media Query min-width 768px End */

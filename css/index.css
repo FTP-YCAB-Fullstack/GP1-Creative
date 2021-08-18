@@ -59,17 +59,3 @@
   top: 7px;
   box-shadow: none;
 }
-
-/* Media Query min-width 768px Start */
-/* @media (min-width: 768px) {
-  body {
-    margin: 2rem 2rem !important;
-  }
-  #welcome {
-    font-size: 8vw;
-  }
-  #container-welcome {
-    margin-top: 4rem !important;
-  }
-} */
-/* Media Query min-width 768px End */
