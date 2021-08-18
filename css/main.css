@@ -29,6 +29,65 @@
 }
 /* Footer End */
 
+/* Media Query min-width 600px Start */
+@media (min-width: 600px) {
+  body {
+    margin: 0 !important;
+    box-sizing: border-box;
+  }
+
+  #title-card-weather {
+    font-size: 2rem;
+  }
+
+  #weather-cards {
+    width: 500px;
+    height: 400px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: y;
+    flex-wrap: wrap;
+    margin: 20px auto;
+  }
+
+  .satuan {
+    margin: 25px auto;
+  }
+
+  .text h1 {
+    font-size: 2rem;
+  }
+
+  .card-output {
+    height: 400px;
+  }
+
+  .card {
+    width: 90vw;
+  }
+
+  .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .links a {
+    margin: 0.5rem 0.7rem;
+  }
+
+  footer p {
+    font-size: 0.8rem;
+    padding-bottom: -3rem;
+  }
+
+  footer .logo {
+    margin-bottom: 20px;
+  }
+}
+/* Media Query min-width 600px End */
+
 /* Media Query min-width 768px Start */
 @media (min-width: 768px) {
   body {

@@ -19,31 +19,35 @@
   <body class="my-10 mx-16 text-white h-full" style="background-color: #53a6d8">
     <div id="container-bubble"></div>
     <!-- Navbar (Header) -->
-    <header class="flex">
+    <header class="flex sm:m-4">
       <a class="flex-grow" href="index.html"
         ><img
           class="mx-8 w-auto h-10"
           src="assets/MauNgapainLogo(edited).png"
           alt="Logo"
       /></a>
-      <a class="mx-10 font-bold" href="contact-us.html">Contact Us</a>
-      <a class="mx-10 font-bold" href="help.html">Help</a>
+      <ul>
+        <li>
+          <a class="mx-10 font-bold" href="contact-us.html">Contact Us</a>
+        </li>
+        <li><a class="mx-10 font-bold" href="help.html">Help</a></li>
+      </ul>
     </header>
     <!-- Main Content -->
     <div class="flex flex-col justify-center items-center">
-      <div
-        id="container-welcome"
-        class="
-          text text-7xl
-          font-bold
-          mt-20
-          tracking-wide
-          max-w-3xl
-          leading-tight
-          text-center
-        "
-      >
-        <h1 id="welcome">Selamat Datang di Website Kami</h1>
+      <div id="container-welcome">
+        <h1
+          id="welcome"
+          class="
+            text
+            sm:text-5xl
+            font-bold
+            sm:mt-28 sm:tracking-wide sm:max-w-xl sm:leading-tight
+            text-center
+          "
+        >
+          Selamat Datang di Website Kami
+        </h1>
       </div>
       <a href="main.html">
         <button
@@ -51,10 +55,7 @@
             btn-start
             bg-white
             rounded-lg
-            px-8
-            py-3
-            mt-8
-            text-2xl
+            sm:px-5 sm:py-2 sm:mt-5 sm:text-base
             font-bold
             tracking-wide
           "
@@ -92,6 +93,6 @@
         </div>
       </div>
     </footer>
-    <script src="./js/index.js"></script>
+    <!-- <script src="./js/index.js"></script> -->
   </body>
 </html>
