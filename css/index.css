@@ -65,6 +65,33 @@
   display: none;
 }
 
+@media (max-width: 640px) {
+  #check {
+    display: none;
+  }
+
+  .checkbtn {
+    display: block;
+    font-size: 2rem;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    margin-right: -30px;
+    margin-bottom: 80px;
+  }
+
+  .text {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .btn-start {
+    padding: 0.9rem 0.7rem;
+  }
+}
+
 /* Media Query min-width 600px Start */
 @media (max-width: 768px) {
   #check {
