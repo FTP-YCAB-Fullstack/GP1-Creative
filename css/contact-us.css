@@ -5,6 +5,16 @@
   font-family: "Poppins", sans-serif;
 }
 
+@media (max-width: 640px) {
+  #title-contact-us {
+    font-size: 2.2rem;
+  }
+
+  #logo {
+    margin-right: 30px;
+  }
+}
+
 @media (max-width: 1180px) {
   #information-cards {
     display: flex;

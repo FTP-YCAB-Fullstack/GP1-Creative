@@ -159,7 +159,7 @@ document.getElementById("text-todo").onkeyup = (event) => {
 
 document.getElementById("add-todo").onclick = () => {
   let textToDo = document.getElementById("text-todo").value;
-  if ((!/\s/.test(textToDo) || /\w+\s+\w+/.test(textToDo)) && "" != textToDo) {
+  if ((!/\s/.test(textToDo) || /\w+/.test(textToDo)) && "" != textToDo) {
     let toDo = createToDo(textToDo, counter);
     dataTodo[0]["data"][counter] = toDo;
     counter++;

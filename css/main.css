@@ -10,7 +10,7 @@
 
 /* Todo Card Start */
 .card-head {
-  background: url("../assets/Header-Card.jpg");
+  background: url("../assets/header-kartu.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -35,6 +35,38 @@
 
 .checkbtn {
   display: none;
+}
+
+@media (max-width: 640px) {
+  #check {
+    display: none;
+  }
+
+  .checkbtn {
+    display: block;
+    font-size: 2rem;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    margin-right: -30px;
+    margin-bottom: 80px;
+  }
+
+  #title-card-weather {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  #title-card-todo {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  #card-todo {
+    width: 90%;
+  }
 }
 
 /* Media Query min-width 600px Start */
