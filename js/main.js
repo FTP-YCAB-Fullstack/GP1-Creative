@@ -1,5 +1,5 @@
 // Kartu Cuaca Start
-let success = async position => {
+let success = async (position) => {
   let dataWeather = await fetch(
     `https://api.ambeedata.com/weather/forecast/by-lat-lng?lat=${position.coords.latitude}&lng=${position.coords.longitude}&filter=hourly`,
     {
@@ -7,10 +7,10 @@ let success = async position => {
       headers: {
         "Content-type": "application/json",
         "x-api-key":
-          "9dfdbe26a37470b7c04444549cc7b020b99230a85a9e3f8a9d41da6b4a82065a"
-      }
+          "9dfdbe26a37470b7c04444549cc7b020b99230a85a9e3f8a9d41da6b4a82065a",
+      },
     }
-  ).then(response => response.json());
+  ).then((response) => response.json());
 
   let setWeather = (element, index) => {
     let weather = element.querySelector("#weather");
@@ -49,7 +49,7 @@ let success = async position => {
   }
 };
 
-let fail = error => {
+let fail = (error) => {
   console.log(error);
 };
 
@@ -67,8 +67,8 @@ const list = document.getElementById("list");
 let counter = 0;
 let dataTodo = [
   {
-    data: {}
-  }
+    data: {},
+  },
 ];
 
 let refreshDataLocal = () => {
@@ -78,7 +78,7 @@ let refreshDataLocal = () => {
 let createToDo = (name, position, isCheck = false) => {
   let objToDo = {
     name,
-    isCheck
+    isCheck,
   };
 
   const li = document.createElement("li");
@@ -150,7 +150,7 @@ if (localStorage.getItem("dataToDo") != null) {
   }
 }
 
-document.getElementById("text-todo").onkeyup = event => {
+document.getElementById("text-todo").onkeyup = (event) => {
   if (event.code === "Enter") {
     document.getElementById("add-todo").click();
     document.getElementById("text-todo").value = "";
@@ -159,11 +159,12 @@ document.getElementById("text-todo").onkeyup = event => {
 
 document.getElementById("add-todo").onclick = () => {
   let textToDo = document.getElementById("text-todo").value;
-  let toDo = createToDo(textToDo, counter);
-  console.log(counter);
-  dataTodo[0]["data"][counter] = toDo;
-  counter++;
-  refreshDataLocal();
+  if ((!/\s/.test(textToDo) || /\w+\s+\w+/.test(textToDo)) && "" != textToDo) {
+    let toDo = createToDo(textToDo, counter);
+    dataTodo[0]["data"][counter] = toDo;
+    counter++;
+    refreshDataLocal();
+  }
 };
 
 document.getElementById("reset-todo").onclick = () => {
@@ -172,8 +173,8 @@ document.getElementById("reset-todo").onclick = () => {
   }
   dataTodo = [
     {
-      data: {}
-    }
+      data: {},
+    },
   ];
   localStorage.clear();
   counter = 0;

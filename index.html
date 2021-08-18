@@ -22,18 +22,30 @@
   >
     <div id="container-bubble"></div>
     <!-- Navbar (Header) -->
-    <header class="flex flex-row relative sm:m-4 sm:justify-between">
+    <header
+      class="
+        flex
+        relative
+        sm:m-4 sm:justify-between
+        md:flex md:justify-between md:relative
+      "
+    >
       <input type="checkbox" id="check" />
       <label for="check" class="checkbtn sm:flex-end">
         <i class="fas fa-bars text-white"></i>
       </label>
       <a href="index.html"
         ><img
-          class="mx-8 w-auto h-10 sm:mx-4 sm:flex-start"
+          class="mx-8 w-auto h-10 sm:mx-4 sm:flex-start md:flex-start"
           src="assets/MauNgapainLogo(edited).png"
           alt="Logo"
       /></a>
-      <ul class="sm:justify-center sm:items-center">
+      <ul
+        class="
+          sm:justify-center sm:items-center
+          md:flex md:justify-end md:items-center md:py-4
+        "
+      >
         <li>
           <a class="mx-10 font-bold" href="contact-us.html">Contact Us</a>
         </li>
@@ -42,20 +54,20 @@
     </header>
     <!-- Main Content -->
     <div class="flex flex-col justify-center items-center">
-      <div
-        class="
-          text text-7xl
-          font-bold
-          mt-20
-          sm:mt-28
-          md:mt-16
-          tracking-wide
-          max-w-3xl
-          leading-tight
-          text-center
-        "
-      >
-        <h1 class="md:text-6xl">Selamat Datang di Website Kami</h1>
+      <div>
+        <h1
+          class="
+            text
+            font-bold
+            sm:text-5xl sm:max-w-3xl sm:leading-tight
+            md:mt-16 md:text-7xl md:leading-snug
+            sm:mt-28
+            md:tracking-wide
+            text-center
+          "
+        >
+          Selamat Datang di Website Kami
+        </h1>
       </div>
       <a href="main.html">
         <button
@@ -64,6 +76,7 @@
             bg-white
             rounded-lg
             sm:px-5 sm:py-2 sm:mt-5 sm:text-base
+            md:text-2xl
             font-bold
             tracking-wide
           "
@@ -74,7 +87,7 @@
       </a>
     </div>
     <!-- Footer -->
-    <footer class="relative sm:mx-auto">
+    <footer class="relative sm:mx-auto md:mx-auto">
       <div class="flex flex-col mt-16 justify-center share_section">
         <div class="text-white text-base flex justify-center items-center mb-8">
           <p>- Supported By -</p>
