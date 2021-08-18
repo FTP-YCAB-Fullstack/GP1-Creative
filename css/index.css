@@ -21,6 +21,7 @@
 .bubble {
   position: absolute;
   background-color: white;
+  z-index: 1;
   opacity: 0.2;
   border-radius: 50%;
   bottom: -100px;
@@ -60,8 +61,82 @@
   box-shadow: none;
 }
 
+.checkbtn {
+  display: none;
+}
+
+/* Media Query min-width 600px Start */
+@media (min-width: 640px) {
+  #check {
+    display: none;
+  }
+
+  .checkbtn {
+    display: block;
+    font-size: 2rem;
+  }
+
+  ul {
+    position: fixed;
+    width: 50%;
+    border-radius: 0 10px 10px 0;
+    height: 20vh;
+    top: 90px;
+    left: -100%;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.5s;
+    /* glass */
+    background: rgba(22, 20, 20, 0.45);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  nav ul li {
+    display: block;
+    margin: auto;
+    line-height: 50px;
+  }
+  nav ul li a {
+    font-size: 2rem;
+  }
+  a:hover,
+  a.active {
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ ul {
+    left: 0;
+  }
+}
+/*
+/* @media (min-width: 600px) {
+  .main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #welcome {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .btn-start {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  footer {
+    margin-top: 7rem;
+  }
+} */
+/* Media Query min-width 600px End */
+
 /* Media Query min-width 768px Start */
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   body {
     margin: 2rem 2rem !important;
   }
@@ -71,5 +146,5 @@
   #container-welcome {
     margin-top: 4rem !important;
   }
-}
+} */
 /* Media Query min-width 768px End */
