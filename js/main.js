@@ -30,6 +30,8 @@ let success = async (position) => {
       weather.setAttribute("class", "fas fa-cloud-sun-rain fa-4x icon");
     } else if (/rain/.test(statusWeather) && /night/.test(statusWeather)) {
       weather.setAttribute("class", "fas fa-cloud-moon-rain icon");
+    } else if (/rain/.test(statusWeather)) {
+      weather.setAttribute("class", "fas fa-cloud-showers-heavy fa-4x icon")
     }
 
     summary.innerHTML = dataWeather["data"]["forecast"][index]["summary"];
