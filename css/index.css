@@ -57,7 +57,7 @@
 
 .btn-start:hover {
   background-color: darkcyan;
-  color: black !important;
+  color: black !important ;
 }
 
 .btn-start:active {

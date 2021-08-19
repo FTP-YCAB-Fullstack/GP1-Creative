@@ -24,7 +24,6 @@ header a img:hover {
 @media (min-width: 768px) {
   body {
     margin: 2rem 2rem !important;
-    overflow: hidden;
   }
 }
 /* Media Query min-width 768px End */
