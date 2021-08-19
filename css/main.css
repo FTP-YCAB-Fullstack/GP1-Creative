@@ -37,6 +37,30 @@
   display: none;
 }
 
+.satuan {
+  opacity: 0.9;
+}
+
+ul li a:hover {
+  box-shadow: 0 5px black;
+  animation: all 0.3s ease-in-out;
+}
+
+ul li a:active {
+  position: relative;
+  box-shadow: none;
+  top: 7px;
+  animation: all 0.3s ease-in-out;
+}
+
+footer .share_section .icon a:hover {
+  transform: scale(1.2);
+}
+
+header a img:hover {
+  transform: scale(1.2);
+}
+
 @media (max-width: 640px) {
   #check {
     display: none;
@@ -66,6 +90,29 @@
 
   #card-todo {
     width: 90%;
+  }
+
+  ul li a:hover {
+    box-shadow: none;
+  }
+
+  #reset-todo:hover {
+    transform: scale(1.1);
+    animation: iRotate 2s infinite;
+  }
+
+  @keyframes iRotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  #add-todo:hover {
+    transform: scale(1.2);
+    color: #53a6d8;
   }
 }
 
@@ -99,11 +146,13 @@
   ul li {
     line-height: 30px;
   }
+
   ul li a {
     display: block;
     margin-top: 2rem;
     font-size: 1.2rem;
   }
+
   a:hover,
   a.active {
     background: none;
@@ -117,13 +166,60 @@
     transform: rotate(90deg);
     color: teal;
   }
-}
 
-@media (max-width: 1180px) {
   #weather-cards {
     display: flex;
     justify-content: flex-start;
     flex-wrap: nowrap;
     overflow: auto;
+  }
+
+  #reset-todo:hover {
+    transform: scale(1.1);
+    animation: iRotate 2s infinite;
+  }
+
+  @keyframes iRotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  #add-todo:hover {
+    transform: scale(1.2);
+    color: #53a6d8;
+  }
+}
+
+@media (max-width: 1536px) {
+  #weather-cards {
+    display: flex;
+    justify-items: left;
+    flex-wrap: nowrap;
+    overflow: auto;
+  }
+  #weather-cards .satuan {
+    justify-content: flex-start;
+  }
+
+  #reset-todo:hover {
+    transform: scale(1.1);
+    animation: iRotate 0.5s infinite;
+  }
+
+  @keyframes iRotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  #add-todo:hover {
+    transform: scale(1.2);
   }
 }
