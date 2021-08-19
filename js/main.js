@@ -18,6 +18,7 @@ let success = async (position) => {
     let time = element.querySelector("#time");
 
     let statusWeather = dataWeather["data"]["forecast"][index]["icon"];
+    console.log(statusWeather);
     if (/clear/.test(statusWeather) && /day/.test(statusWeather)) {
       weather.setAttribute("class", "fas fa-sun fa-4x icon");
     } else if (/clear/.test(statusWeather) && /night/.test(statusWeather)) {
@@ -29,7 +30,9 @@ let success = async (position) => {
     } else if (/rain/.test(statusWeather) && /day/.test(statusWeather)) {
       weather.setAttribute("class", "fas fa-cloud-sun-rain fa-4x icon");
     } else if (/rain/.test(statusWeather) && /night/.test(statusWeather)) {
-      weather.setAttribute("class", "fas fa-cloud-moon-rain icon");
+      weather.setAttribute("class", "fas fa-cloud-moon-rain fa-4x icon");
+    } else if (/rain/.test(statusWeather)) {
+      weather.setAttribute("class", "fas fa-cloud-showers-heavy fa-4x icon")
     }
 
     summary.innerHTML = dataWeather["data"]["forecast"][index]["summary"];
