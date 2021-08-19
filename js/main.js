@@ -1,5 +1,5 @@
 // Kartu Cuaca Start
-let success = async (position) => {
+let success = async position => {
   let dataWeather = await fetch(
     `https://api.ambeedata.com/weather/forecast/by-lat-lng?lat=${position.coords.latitude}&lng=${position.coords.longitude}&filter=hourly`,
     {
@@ -7,13 +7,13 @@ let success = async (position) => {
       headers: {
         "Content-type": "application/json",
         "x-api-key":
-          "b4cedef380d6627d327f2ad174a2ef05e403ed2170712d7ecdfdacc084dd19f6",
+          "b4cedef380d6627d327f2ad174a2ef05e403ed2170712d7ecdfdacc084dd19f6"
         // punya Mulia : 9dfdbe26a37470b7c04444549cc7b020b99230a85a9e3f8a9d41da6b4a82065a
         // punya dimas : b4cedef380d6627d327f2ad174a2ef05e403ed2170712d7ecdfdacc084dd19f6
         // punya yusril : b7e8ef6541ab5e5a8ad95a4abfb08dd4788c80716fecc6da0c9e9f73fd3f17f1
-      },
+      }
     }
-  ).then((response) => response.json());
+  ).then(response => response.json());
 
   let setWeather = (element, index) => {
     let weather = element.querySelector("#weather");
@@ -21,6 +21,7 @@ let success = async (position) => {
     let time = element.querySelector("#time");
 
     let statusWeather = dataWeather["data"]["forecast"][index]["icon"];
+    console.log(statusWeather);
     if (/clear/.test(statusWeather) && /day/.test(statusWeather)) {
       weather.setAttribute("class", "fas fa-sun fa-4x icon");
     } else if (/clear/.test(statusWeather) && /night/.test(statusWeather)) {
@@ -54,7 +55,7 @@ let success = async (position) => {
   }
 };
 
-let fail = (error) => {
+let fail = error => {
   console.log(error);
 };
 
@@ -72,8 +73,8 @@ const list = document.getElementById("list");
 let counter = 0;
 let dataTodo = [
   {
-    data: {},
-  },
+    data: {}
+  }
 ];
 
 let refreshDataLocal = () => {
@@ -83,7 +84,7 @@ let refreshDataLocal = () => {
 let createToDo = (name, position, isCheck = false) => {
   let objToDo = {
     name,
-    isCheck,
+    isCheck
   };
 
   const li = document.createElement("li");
@@ -155,10 +156,9 @@ if (localStorage.getItem("dataToDo") != null) {
   }
 }
 
-document.getElementById("text-todo").onkeyup = (event) => {
+document.getElementById("text-todo").onkeyup = event => {
   if (event.code === "Enter") {
     document.getElementById("add-todo").click();
-    document.getElementById("text-todo").value = "";
   }
 };
 
@@ -170,6 +170,7 @@ document.getElementById("add-todo").onclick = () => {
     counter++;
     refreshDataLocal();
   }
+  document.getElementById("text-todo").value = "";
 };
 
 document.getElementById("reset-todo").onclick = () => {
@@ -178,8 +179,8 @@ document.getElementById("reset-todo").onclick = () => {
   }
   dataTodo = [
     {
-      data: {},
-    },
+      data: {}
+    }
   ];
   localStorage.clear();
   counter = 0;
