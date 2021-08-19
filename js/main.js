@@ -53,13 +53,13 @@ let fail = (error) => {
   console.log(error);
 };
 
-// window.onload = () => {
-//   if (navigator.geolocation) {
-//     navigator.geolocation.getCurrentPosition(success, fail);
-//   } else {
-//     console.log("Geolocation is not supported by this browser.");
-//   }
-// };
+window.onload = () => {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(success, fail);
+  } else {
+    console.log("Geolocation is not supported by this browser.");
+  }
+};
 // Kartu Cuaca End
 
 // Kartu To-Do-List Start
