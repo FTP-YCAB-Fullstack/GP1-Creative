@@ -10,14 +10,14 @@
 
 /* Todo Card Start */
 .card-head {
-  background: url("../assets/Header-Card.jpg");
+  background: url("../assets/header-kartu.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 .card-output {
   height: 300px;
-  overflow: scroll;
+  overflow: auto;
   scroll-behavior: smooth;
 }
 /* Todo Card end */
@@ -28,3 +28,102 @@
   height: 40px;
 }
 /* Footer End */
+
+#check {
+  display: none;
+}
+
+.checkbtn {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  #check {
+    display: none;
+  }
+
+  .checkbtn {
+    display: block;
+    font-size: 2rem;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    margin-right: -30px;
+    margin-bottom: 80px;
+  }
+
+  #title-card-weather {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  #title-card-todo {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  #card-todo {
+    width: 90%;
+  }
+}
+
+/* Media Query min-width 600px Start */
+@media (max-width: 768px) {
+  #check {
+    display: none;
+  }
+
+  .checkbtn {
+    display: block;
+    font-size: 2rem;
+  }
+
+  ul {
+    position: fixed;
+    width: auto;
+    border-radius: 0 10px 10px 0;
+    height: 25vh;
+    top: 90px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+    /* glass */
+    background: #0908535e;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  ul li {
+    line-height: 30px;
+  }
+  ul li a {
+    display: block;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+  }
+  a:hover,
+  a.active {
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ ul {
+    left: 0;
+  }
+
+  .checkbtn:active {
+    transform: rotate(90deg);
+    color: teal;
+  }
+}
+
+@media (max-width: 1180px) {
+  #weather-cards {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow: auto;
+  }
+}

@@ -1,6 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
+.share_section .logo {
+  width: 40px;
+  height: 40px;
+}
+
+/* Media Query min-width 768px Start */
+@media (min-width: 768px) {
+  body {
+    margin: 2rem 2rem !important;
+  }
+}
+/* Media Query min-width 768px End */

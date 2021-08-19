@@ -53,11 +53,13 @@ let fail = (error) => {
   console.log(error);
 };
 
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(success, fail);
-} else {
-  console.log("Geolocation is not supported by this browser.");
-}
+window.onload = () => {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(success, fail);
+  } else {
+    console.log("Geolocation is not supported by this browser.");
+  }
+};
 // Kartu Cuaca End
 
 // Kartu To-Do-List Start
@@ -137,7 +139,7 @@ let createToDo = (name, position, isCheck = false) => {
 };
 
 if (localStorage.getItem("dataToDo") != null) {
-  dataTemp = JSON.parse(localStorage.getItem("dataToDo"));
+  let dataTemp = JSON.parse(localStorage.getItem("dataToDo"));
   for (let item in dataTemp[0]["data"]) {
     dataTodo[0]["data"][counter] = createToDo(
       dataTemp[0]["data"][item]["name"],
@@ -157,11 +159,12 @@ document.getElementById("text-todo").onkeyup = (event) => {
 
 document.getElementById("add-todo").onclick = () => {
   let textToDo = document.getElementById("text-todo").value;
-  let toDo = createToDo(textToDo, counter);
-  console.log(counter);
-  dataTodo[0]["data"][counter] = toDo;
-  counter++;
-  refreshDataLocal();
+  if ((!/\s/.test(textToDo) || /\w+/.test(textToDo)) && "" != textToDo) {
+    let toDo = createToDo(textToDo, counter);
+    dataTodo[0]["data"][counter] = toDo;
+    counter++;
+    refreshDataLocal();
+  }
 };
 
 document.getElementById("reset-todo").onclick = () => {

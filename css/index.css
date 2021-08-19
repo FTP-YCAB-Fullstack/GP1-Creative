@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* start Bubble */
+#container-bubble {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+.bubble {
+  position: absolute;
+  background-color: white;
+  z-index: 1;
+  opacity: 0.2;
+  border-radius: 50%;
+  bottom: -100px;
+  animation: move 0.5s infinite ease-in;
+}
+
+@keyframes move {
+  0% {
+    bottom: -100px;
+  }
+
+  100% {
+    bottom: 1080px;
+  }
+}
+
+.bubble:hover {
+  animation: none;
+  filter: blur(150px);
+}
+
+.bubble::after {
+  content: "";
+}
+/* end Bubble */
+
+/* btn started */
+.btn-start {
+  box-shadow: 0 7px rgb(17, 16, 16);
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.btn-start:active {
+  position: relative;
+  top: 7px;
+  box-shadow: none;
+}
+
+.checkbtn {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  #check {
+    display: none;
+  }
+
+  .checkbtn {
+    display: block;
+    font-size: 2rem;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    margin-right: -30px;
+    margin-bottom: 80px;
+  }
+
+  .text {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .btn-start {
+    padding: 0.9rem 0.7rem;
+  }
+}
+
+/* Media Query min-width 600px Start */
+@media (max-width: 768px) {
+  #check {
+    display: none;
+  }
+
+  .checkbtn {
+    display: block;
+    font-size: 2rem;
+  }
+
+  ul {
+    position: fixed;
+    width: auto;
+    border-radius: 0 10px 10px 0;
+    height: 25vh;
+    top: 90px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+    /* glass */
+    background: #0908535e;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  ul li {
+    line-height: 30px;
+  }
+  ul li a {
+    display: block;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+  }
+  a:hover,
+  a.active {
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ ul {
+    left: 0;
+  }
+
+  .checkbtn:active {
+    transform: rotate(90deg);
+    color: teal;
+  }
+}
