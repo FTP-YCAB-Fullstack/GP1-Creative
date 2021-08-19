@@ -55,6 +55,11 @@
   cursor: pointer;
 }
 
+.btn-start:hover {
+  background-color: darkcyan;
+  color: black !important ;
+}
+
 .btn-start:active {
   position: relative;
   top: 7px;
