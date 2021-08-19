@@ -77,6 +77,14 @@ ul li a:active {
   animation: all 0.3s ease-in-out;
 }
 
+footer .share_section .icon a:hover {
+  transform: scale(1.2);
+}
+
+header a img:hover {
+  transform: scale(1.2);
+}
+
 @media (max-width: 640px) {
   #check {
     display: none;

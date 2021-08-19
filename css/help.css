@@ -12,6 +12,14 @@
   height: 40px;
 }
 
+footer .share_section .icon a:hover {
+  transform: scale(1.2);
+}
+
+header a img:hover {
+  transform: scale(1.2);
+}
+
 /* Media Query min-width 768px Start */
 @media (min-width: 768px) {
   body {
