@@ -30,7 +30,11 @@ let success = async (position) => {
     } else if (/rain/.test(statusWeather) && /day/.test(statusWeather)) {
       weather.setAttribute("class", "fas fa-cloud-sun-rain fa-4x icon");
     } else if (/rain/.test(statusWeather) && /night/.test(statusWeather)) {
+<<<<<<< HEAD
       weather.setAttribute("class", "fas fa-cloud-moon-rain fa-4x icon");
+=======
+      weather.setAttribute("class", "fas fa-cloud-moon-rain icon");
+>>>>>>> 7792c129a10c6207ddb7697e544dbf8a2d846f1d
     } else if (/rain/.test(statusWeather)) {
       weather.setAttribute("class", "fas fa-cloud-showers-heavy fa-4x icon")
     }
