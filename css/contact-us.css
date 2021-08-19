@@ -5,6 +5,14 @@
   font-family: "Poppins", sans-serif;
 }
 
+footer .share_section .icon a:hover {
+  transform: scale(1.2);
+}
+
+header a img:hover {
+  transform: scale(1.2);
+}
+
 @media (max-width: 640px) {
   #title-contact-us {
     font-size: 2.2rem;
