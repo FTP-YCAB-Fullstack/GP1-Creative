@@ -65,6 +65,18 @@
   display: none;
 }
 
+ul li a:hover {
+  box-shadow: 0 5px black;
+  animation: all 0.3s ease-in-out;
+}
+
+ul li a:active {
+  position: relative;
+  box-shadow: none;
+  top: 7px;
+  animation: all 0.3s ease-in-out;
+}
+
 @media (max-width: 640px) {
   #check {
     display: none;
@@ -89,6 +101,10 @@
 
   .btn-start {
     padding: 0.9rem 0.7rem;
+  }
+
+  ul li a:hover {
+    box-shadow: none;
   }
 }
 
@@ -127,6 +143,11 @@
     margin-top: 2rem;
     font-size: 1.2rem;
   }
+
+  ul li a:hover {
+    box-shadow: none;
+  }
+
   a:hover,
   a.active {
     background: none;
