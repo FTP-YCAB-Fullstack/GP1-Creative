@@ -7,7 +7,10 @@ let success = async (position) => {
       headers: {
         "Content-type": "application/json",
         "x-api-key":
-          "9dfdbe26a37470b7c04444549cc7b020b99230a85a9e3f8a9d41da6b4a82065a",
+          "b4cedef380d6627d327f2ad174a2ef05e403ed2170712d7ecdfdacc084dd19f6",
+        // punya Mulia : 9dfdbe26a37470b7c04444549cc7b020b99230a85a9e3f8a9d41da6b4a82065a
+        // punya dimas : b4cedef380d6627d327f2ad174a2ef05e403ed2170712d7ecdfdacc084dd19f6
+        // punya yusril : b7e8ef6541ab5e5a8ad95a4abfb08dd4788c80716fecc6da0c9e9f73fd3f17f1
       },
     }
   ).then((response) => response.json());
@@ -30,6 +33,8 @@ let success = async (position) => {
       weather.setAttribute("class", "fas fa-cloud-sun-rain fa-4x icon");
     } else if (/rain/.test(statusWeather) && /night/.test(statusWeather)) {
       weather.setAttribute("class", "fas fa-cloud-moon-rain icon");
+    } else if (/rain/.test(statusWeather)) {
+      weather.setAttribute("class", "fas fa-cloud-showers-heavy fa-4x icon");
     }
 
     summary.innerHTML = dataWeather["data"]["forecast"][index]["summary"];
@@ -53,13 +58,13 @@ let fail = (error) => {
   console.log(error);
 };
 
-// window.onload = () => {
-//   if (navigator.geolocation) {
-//     navigator.geolocation.getCurrentPosition(success, fail);
-//   } else {
-//     console.log("Geolocation is not supported by this browser.");
-//   }
-// };
+window.onload = () => {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(success, fail);
+  } else {
+    console.log("Geolocation is not supported by this browser.");
+  }
+};
 // Kartu Cuaca End
 
 // Kartu To-Do-List Start
